@@ -1,0 +1,274 @@
+/* css for small screens */
+
+@media only screen and (max-width: 600px) {
+    #header {
+        background-image: url('../images/phone.png');
+        background-size: 90%;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .header-text {
+        margin-top: 100%;
+        font-size: 20px;
+
+    }
+
+    .header-text h1 {
+        font-size: 40px;
+    }
+
+    nav .fa-solid {
+        display: block;
+        margin: 10px;
+        font-size: 20px;
+        color: rgb(0, 0, 0);
+    }
+
+    nav {
+        background-color: transparent;
+
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li a {
+        color: white;
+    }
+
+    nav #sidemenu {
+        right: -200px;
+        width: fit-content;
+        background-color: rgba(0, 0, 0, 0.5);
+
+
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+        color: #fff;
+
+    }
+
+    .sub-title {
+        font-size: 40px;
+
+    }
+
+    .tab-titles {
+        margin: 10px 100px;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 100%;
+
+    }
+
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+
+    .about-col-2 {
+        font-size: 14px;
+
+    }
+
+    .tab-links {
+        font-size: 16px;
+        margin-right: 20px;
+
+    }
+
+    .sub-title {
+        text-align: center;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+
+    }
+
+    .contact-left {
+        text-align: center;
+    }
+
+    .contact-right .btn2 {
+        display: flex;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+
+    .tab-contents ul {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    #education ul,
+    #experience ul {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    .video {
+        height: 200px;
+        width: 400px;
+
+    }
+
+
+    #toggleButton {
+        right: 400px;
+        font-size: 10px;
+
+
+    }
+
+    #toggleButton:hover {
+        background-color: #000000;
+        transform: background-color;
+
+    }
+
+
+    #videoContainer {
+        position: fixed;
+        top: 200px;
+        right: -400px;
+        transition: right 0.5s ease;
+
+    }
+
+
+
+
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+    .header-text {
+        margin-top: 40%;
+        font-size: 40px;
+    }
+
+    .header-text h1 {
+        font-size: 36px;
+    }
+
+    .video {
+        height: 300px;
+        width: 600px;
+
+    }
+
+
+    #toggleButton {
+        right: 600px;
+        font-size: 14px;
+
+
+    }
+
+    #toggleButton:hover {
+        background-color: #000000;
+        transform: background-color;
+
+    }
+
+
+    #videoContainer {
+        position: fixed;
+        top: 200px;
+        right: -600px;
+        transition: right 0.5s ease;
+
+    }
+
+
+    #education ul,
+    #experience ul {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+    #education ul li,
+    #experience ul li {
+        width: fit-content;
+    }
+
+    .sub-title {
+        font-size: 36px;
+    }
+
+    .about-col-1,
+    .about-col-2 {
+        flex-basis: 45%;
+    }
+
+    .about-col-1 {
+        margin-bottom: 0px;
+        margin-top: 70px;
+    }
+
+    .about-col-2 {
+        font-size: 16px;
+    }
+
+    .tab-links {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+
+    .tab-contents {
+        width: 100%;
+    }
+
+    .tab-contents ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-gap: 10px;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .sub-title {
+        text-align: center;
+    }
+
+    .contact-left,
+    .contact-right {
+        flex-basis: 100%;
+    }
+
+    .contact-left {
+        text-align: center;
+    }
+
+    .contact-right .btn2 {
+        display: flex;
+    }
+
+    .copyright {
+        font-size: 16px;
+    }
+}

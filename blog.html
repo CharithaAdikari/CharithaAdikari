@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>blog</title>
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a505f3efe0.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .image-full {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+            margin-bottom: 2em;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: serif;
+            font-weight: 500;
+            color: #000000;
+            margin-top: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        h3 {
+            color: #000000;
+        }
+
+        main p {
+            text-align: justify;
+        }
+
+        .subtitle {
+            font-weight: 700;
+            color: #C00000;
+            font-size: .75rem;
+            margin: 0;
+        }
+
+        .article-title {
+            font-size: 1.5rem;
+            color: rgb(189, 164, 37);
+        }
+
+        .article-read-more,
+        .article-info {
+            font-size: .875rem;
+        }
+
+        .article-read-more {
+            color: #c55f5f;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .article-read-more:hover,
+        .article-read-more:focus {
+            color: #C00000;
+            text-decoration: underline;
+        }
+
+        .article-info {
+            margin: 2em 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .container-nav,
+        .container-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background: #f3f0f0;
+            text-align: center;
+            padding: 2em 0;
+            margin-bottom: 3em;
+        }
+
+        footer {
+            background: #1d1e1f;
+            color: white;
+            text-align: center;
+            padding: .5em 0;
+        }
+
+        .fa-heart {
+            color: red;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: red;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: .5em 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 700;
+            margin: .25em 0;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            color: #C00000;
+        }
+
+        .current-page {
+            border-bottom: 1px solid #707070;
+        }
+
+        .current-page:hover {
+            color: #707070;
+        }
+
+        .article-featured {
+            border-bottom: #707070 1px solid;
+            padding-bottom: 2em;
+            margin-bottom: 2em;
+        }
+
+        .article-recent {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2em;
+        }
+
+        .article-recent-main {
+            order: 2;
+        }
+
+        .article-recent-secondary {
+            order: 1;
+        }
+
+        .sidebar-widget {
+            border: 10px solid #efefef;
+            margin-bottom: 2em;
+            padding: 1em;
+        }
+
+        .widget-title {
+            font-size: 1rem;
+            font-family: sans-serif;
+            font-weight: 700;
+
+        }
+
+        .widget-recent-post-title {
+            font-size: 1rem;
+        }
+
+        .widget-recent-post {
+            display: flex;
+            flex-direction: column;
+            border-bottom: 1px solid #707070;
+            margin-bottom: 1em;
+        }
+
+        .widget-recent-post:last-child {
+            border: 0;
+            margin: 0;
+        }
+
+        .widget-image {
+            order: -1;
+            margin-bottom: .5em;
+        }
+
+
+        @media (min-width: 675px) {
+
+            .container-nav,
+            .container-flex {
+                flex-direction: row;
+            }
+
+            .container-nav {
+                align-items: center;
+            }
+
+            main {
+                width: 70%;
+            }
+
+            aside {
+                width: 25%;
+                min-width: 200px;
+                margin-left: 1em;
+            }
+
+            nav ul {
+                flex-direction: row;
+            }
+
+            nav li {
+                margin-left: 2em;
+            }
+
+
+            .article-recent {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .article-recent-main {
+                width: 68%;
+            }
+
+            .article-recent-secondary {
+                width: 30%;
+            }
+
+            .article-title {
+                order: 99;
+            }
+
+            .article-image {
+                width: 100%;
+                min-height: 200px;
+                object-fit: cover;
+            }
+
+
+            .article-featured {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .article-image {
+                order: -2;
+            }
+
+            .article-info {
+                order: -1;
+            }
+
+            .article-title {
+                order: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container container-nav">
+            <div class="site-title">
+                <h1>Digital Insight Hub</h1>
+                <p class="subtitle">A blog exporting Information Technology for life</p>
+            </div>
+            <nav>
+                <ul>
+
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container container-flex">
+
+        <main role="main">
+
+            <article class="article-featured">
+                <h2 class="article-title">Software Engineering Job Titles</h2>
+                <img src="images/blog-1.jpg" alt="software" class="article-image">
+                <p class="article-info">July 23, 2024 | 3 comments</p>
+                <p class="article-body">Let’s look at some typical job titles to get a better understanding of just how
+                    flexible a future in software engineering can be..</p>
+                <a href="#" class="article-read-more">CONTINUE READING</a>
+            </article>
+
+            <article class="article-recent">
+                <div class="article-recent-main">
+                    <h2 class="article-title">What is Web Development?</h2>
+                    <p class="article-body">With the continued growth of the tech industry, a question that comes up
+                        often is: What is web development?” Let’s begin by defining the term. Once we’ve done that,
+                        we’ll also cover the different types involved, the skills needed, and the stages of web
+                        development.</p>
+                    <a href="#" class="article-read-more">CONTINUE READING</a>
+                </div>
+
+                <div class="article-recent-secondary">
+                    <img src="images/blog-2.jpg" alt="" class="article-image">
+                    <p class="article-info">July 19, 2024 | 3 comments</p>
+                </div>
+            </article>
+
+            <article class="article-recent">
+                <div class="article-recent-main">
+                    <h2 class="article-title">7 Key Features of a Successful Mobile App</h2>
+                    <p class="article-body">Mobile apps can be one of the best experiences for users, and they can
+                        change
+                        the lives of their developers.According to research, in the first quarter of 2023, 27 billion
+                        users downloaded apps from Google Play.Let’s explore the seven key elements that can make your
+                        app stand
+                        out in a very competitive field. </p>
+                    <a href="#" class="article-read-more">CONTINUE READING</a>
+                </div>
+
+                <div class="article-recent-secondary">
+                    <img src="images/blog-3.jpg" alt="" class="article-image">
+                    <p class="article-info">July 12, 2024 | 3 comments</p>
+                </div>
+            </article>
+
+            <article class="article-recent">
+                <div class="article-recent-main">
+                    <h2 class="article-title">What is Version Control Tool? Explore Git and GitHub</h2>
+                    <p class="article-body">Git is a free, open source distributed Version Control System Tool designed
+                        to handle everything from small to very large projects with speed and efficiency. Git has the
+                        functionality, performance, security and flexibility that most teams and individual developers
+                        need.</p>
+                    <a href="#" class="article-read-more">CONTINUE READING</a>
+                </div>
+
+                <div class="article-recent-secondary">
+                    <img src="images/blog-4.png" alt="" class="article-image">
+                    <p class="article-info">July 3, 2024 | 3 comment</p>
+                </div>
+            </article>
+
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-widget">
+                <h2 class="widget-title">ABOUT ME</h2>
+                <img src="images/me.jpg" alt="" class="widget-image">
+                <p class="widget-body">Hey there! 👋 I'm Charitha, a Information Technology student at Rajarata
+                    University.</p>
+            </div>
+
+            <div class="sidebar-widget">
+                <h2 class="widget-title">RECENT POSTS</h2>
+
+                <div class="widget-recent-post">
+                    <h3 class="widget-recent-post-title">Software Engineering Job Titles</h3>
+                    <img src="images/blog-1.jpg" alt="" class="widget-image">
+                </div>
+
+                <div class="widget-recent-post">
+                    <h3 class="widget-recent-post-title">7 Key Features of a Successful Mobile App</h3>
+                    <img src="images/blog-3.jpg" alt="" class="widget-image">
+                </div>
+
+                <div class="widget-recent-post">
+                    <h3 class="widget-recent-post-title">What is Version Control Tool? Explore Git and GitHub</h3>
+                    <img src="images/blog-4.png" alt="" class="widget-image">
+                </div>
+
+            </div>
+
+        </aside>
+    </div>
+
+    <footer>
+        <div class="copyright">
+            <p>© Charitha Adikari. <i class="fa-solid fa-heart"></i> All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
