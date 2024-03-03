@@ -541,3 +541,86 @@ form btn2 {
     color: #C00000;
 
 }
+
+/* ---------------------------------------review */
+
+#review {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+#review .container{
+    padding: 2%;
+}
+
+#reviewForm {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reviewForm label {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    margin-bottom: 5px;
+    color: #000;
+    font-weight: 400;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+#reviewForm input[type="text"],
+#reviewForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#reviewForm input[type="submit"] {
+    background-color: #C00000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: fit-content;
+   
+
+}
+
+#reviewForm input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+#reviewsContainer {
+    margin-top: 20px;
+}
+
+#reviewsContainer h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.review strong {
+    font-weight: bold;
+}
+
+.review p {
+    margin: 5px 0;
+}
+
