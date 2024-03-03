@@ -1,3 +1,45 @@
+// -------------------------------------------------------------------review
+
+function submitReview() {
+    var name = document.getElementById("reviewName").value; 
+    var message = document.getElementById("message").value;
+
+    
+    var review = document.createElement("div");
+    review.classList.add("review");
+    review.innerHTML = "<strong>" + name + "</strong>: " + message;
+
+   
+    document.getElementById("reviewsContainer").appendChild(review);
+
+    
+    document.getElementById("reviewForm").reset();
+}
+
+
+
+function displayExistingReviews() {
+   
+    var existingReviews = [
+        { name: "Thilina", message: "Great work! Highly recommended." },
+        { name: "kasun", message: "Very professional and efficient service." }
+    ];
+
+    var reviewsContainer = document.getElementById("reviewsContainer");
+
+    existingReviews.forEach(function (review) {
+        var reviewElement = document.createElement("div");
+        reviewElement.classList.add("review");
+        reviewElement.innerHTML = "<strong>" + review.name + "</strong>: " + review.message;
+        reviewsContainer.appendChild(reviewElement);
+    });
+}
+
+
+window.onload = function () {
+    displayExistingReviews();
+};
+
 // -------------------------------------------------------------------------------connect each files
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -18,6 +60,12 @@ window.addEventListener('DOMContentLoaded', function () {
         .then(response => response.text())
         .then(html => {
             document.getElementById('contact').innerHTML = html;
+        })
+        .catch(error => console.log(error));
+    fetch('review.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('review').innerHTML = html;
         })
         .catch(error => console.log(error));
 
@@ -105,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
             videoContainer.style.position = 'absolute';
             isOpen = true;
         } else {
-           
+
             if (window.innerWidth <= 600) {
                 videoContainer.style.right = '-400px';
             }
@@ -115,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             else {
-                videoContainer.style.right = '-800px'; 
+                videoContainer.style.right = '-800px';
             }
             videoContainer.style.position = 'fixed';
             isOpen = false;
@@ -147,18 +195,18 @@ const initSlider = () => {
     const scrollbarThumb = sliderScrollbar.querySelector(".scrollbar-thumb");
     const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
-    
+
     scrollbarThumb.addEventListener("mousedown", (e) => {
         const startX = e.clientX;
         const thumbPosition = scrollbarThumb.offsetLeft;
         const maxThumbPosition = sliderScrollbar.getBoundingClientRect().width - scrollbarThumb.offsetWidth;
 
-        
+
         const handleMouseMove = (e) => {
             const deltaX = e.clientX - startX;
             const newThumbPosition = thumbPosition + deltaX;
 
-           
+
             const boundedPosition = Math.max(0, Math.min(maxThumbPosition, newThumbPosition));
             const scrollPosition = (boundedPosition / maxThumbPosition) * maxScrollLeft;
 
@@ -166,18 +214,18 @@ const initSlider = () => {
             imageList.scrollLeft = scrollPosition;
         }
 
-        
+
         const handleMouseUp = () => {
             document.removeEventListener("mousemove", handleMouseMove);
             document.removeEventListener("mouseup", handleMouseUp);
         }
 
-      
+
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
     });
 
-    
+
     slideButtons.forEach(button => {
         button.addEventListener("click", () => {
             const direction = button.id === "prev-slide" ? -1 : 1;
@@ -186,20 +234,20 @@ const initSlider = () => {
         });
     });
 
-    
+
     const handleSlideButtons = () => {
         slideButtons[0].style.display = imageList.scrollLeft <= 0 ? "none" : "flex";
         slideButtons[1].style.display = imageList.scrollLeft >= maxScrollLeft ? "none" : "flex";
     }
 
-    
+
     const updateScrollThumbPosition = () => {
         const scrollPosition = imageList.scrollLeft;
         const thumbPosition = (scrollPosition / maxScrollLeft) * (sliderScrollbar.clientWidth - scrollbarThumb.offsetWidth);
         scrollbarThumb.style.left = `${thumbPosition}px`;
     }
 
-    
+
     imageList.addEventListener("scroll", () => {
         updateScrollThumbPosition();
         handleSlideButtons();
@@ -221,8 +269,10 @@ function submitForm() {
         return;
     }
 
-  
+
     document.getElementById("successMessage").style.display = "block";
-    
+
     form.reset();
 }
+
+
