@@ -271,4 +271,14 @@
     .copyright {
         font-size: 16px;
     }
+
+
+
+    .review,
+    #reviewFormm input[type="text"],
+    #reviewForm textarea,
+    #reviewForm input[type="submit"] {
+        width: 100%;
+    }
+
 }
