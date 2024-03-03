@@ -4,7 +4,7 @@ Hey there, wanderer of the digital world! 👋 Welcome to my whimsical corner of
 
 ## About Me ✨
 
-I'm Charitha Adikari, a dreamer, creator, and pixel magician currently pursuing my undergraduate degree in Software Engineering at Rajarata University. My passion? Weaving digital wonders and crafting captivating experiences that sparkle with imagination!
+I'm Charitha Adikari, a dreamer, creator, and pixel magician currently pursuing my undergraduate degree in Information technology at Rajarata University. My passion? Weaving digital wonders and crafting captivating experiences that sparkle with imagination!
 
 ## Explore My Software Engineering Journey 💻
 
