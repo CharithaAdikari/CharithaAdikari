@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://kit.fontawesome.com/a505f3efe0.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+    <h1 class="sub-title">Leave a Review</h1>
+    <form id="reviewForm" onsubmit="submitReview(); return false;">
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="reviewName" name="name" required>
+        <label for="message">Your Review:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="Add a Review">
+    </form>
+
+    <!-- Display existing reviews -->
+    <h2>Client Reviews</h2>
+    <div id="reviewsContainer">
+        <!-- Existing reviews will be displayed here -->
+    </div>
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
